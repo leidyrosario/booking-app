@@ -1,0 +1,44 @@
+<!--CONTENT-->
+<div class="wrapper three-cols">
+  <!--SIDEBAR-->
+  <app-card title="SEARCH" customCls="side-bar" [isScrollable]="true">
+      <app-hotel-form [text]="text" (search)="searchHotels($event)"></app-hotel-form>
+      <app-separator></app-separator>
+      <app-hotel-list
+      [hotels]="hotels"
+      [text]="text"
+      [active]="active"
+      (setActive)="setActive($event)"
+      ></app-hotel-list>
+    </app-card>
+
+  <!--MAP-->
+  <app-card customCls="map" [padding]="false">
+    <app-gmap [active]="active"></app-gmap>
+  </app-card>
+
+  <!--INFO BOX-->
+  <app-card [centeredContent]="true">
+      <app-separator></app-separator>
+      <app-rates [active]="active"></app-rates>
+      <app-stars [stars]="active?.stars"></app-stars>
+      <br>
+      <app-reservation [active]="active" (addToCart)="cart.addToCart(active, $event)"></app-reservation>
+      </app-card>
+  
+  <!--IMAGE GALLERY-->
+  <app-card [isScrollable]="true" customCls="gallery" [padding]="false">
+    <app-image-gallery [active]="active" [activeImage]="activeImage"></app-image-gallery>
+  </app-card>
+
+  <!--SERVICES-->
+  <app-card title="SERVICES" customCls="services" [isScrollable]="true">
+    <app-services [active]="active"></app-services>
+  </app-card>
+
+  <!--CONTACT FORM-->
+  <app-card customCls="contact" title="Contacts">
+    <app-contact-form (send)="sendEmail($event)"></app-contact-form>
+</app-card>
+</div>
+
