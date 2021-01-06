@@ -6,7 +6,7 @@
 }
 
 .wrapper.three-cols {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-auto-rows: minmax(300px, auto);
   height: 80vh;
 }
@@ -41,11 +41,7 @@
   .wrapper { display: block; }
 }
 
-@media screen and (max-width: 500px) {
-  .wrapper {
-    width: 100%;
-  }
-}
+
 
 
 /** HORIZ FLEXBOX GRID */

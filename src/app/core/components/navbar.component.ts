@@ -9,6 +9,7 @@ import { CartService } from '../services/cart.service';
   <div class="navigation" *ngIf="auth.isLogged()">
     <div class="horiz-grid">
       <div class="logo">GOING PLACES</div>
+      <strong>{{auth.data.name}}</strong>
       <div class="menu">
         <span class="btn" routerLink="search" routerLinkActive="active">SEARCH</span>
         <span class="btn" routerLink="cart" routerLinkActive="active">
@@ -16,7 +17,6 @@ import { CartService } from '../services/cart.service';
         </span>
         <span class="btn" (click)="auth.logout()">LOGOUT</span>
       </div>
-      <em>{{auth.data.name}}</em>
     </div>
   </div>
   `,

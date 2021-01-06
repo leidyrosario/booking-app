@@ -1,5 +1,7 @@
 
 .card {
+  display: grid;
+  grid-template-rows: auto;
   background: white;
   border-radius: 5px;
 }
